@@ -24,7 +24,7 @@ Nosso aplicativo Horta em casa ajuda você com diversas informações sobre hort
 -   [ ] Javascript
 -   [ ] Expo
 -   [ ] Async Storage
--   [ ] FireBase
+-   [ ] Firebase
 -   [ ] Vector Icons
 -   [ ] Expo Notifications
 -   [ ] Linear Gradient
