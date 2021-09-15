@@ -21,6 +21,7 @@
     },
     "android": {
       "config": {
+        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
       },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png"
@@ -28,7 +29,7 @@
       "package": "com.isaiasTortorele.Hortaemcasa",
       "googleServicesFile": "./google-services.json",
       "versionCode": 1,
-      "permissions": ["VIBRATE", "com.google.android.c2dm.permission.RECEIVE", "USER_FACING_NOTIFICATIONS", "WRITE_CALENDAR", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+      "permissions": ["VIBRATE", "com.google.android.c2dm.permission.RECEIVE", "USER_FACING_NOTIFICATIONS"]
     }
   }
 }
