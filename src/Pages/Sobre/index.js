@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+
 import ClipBoard from 'expo-clipboard';
-import {Ionicons} from '@expo/vector-icons';
 import fonts from '../../custom/fonts';
+import { Ionicons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function Sobre(){
   function copyLink(){

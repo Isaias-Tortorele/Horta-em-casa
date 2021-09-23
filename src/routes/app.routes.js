@@ -1,17 +1,18 @@
 import React from "react";
+
+import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator} from "@react-navigation/drawer";
-import {Ionicons} from '@expo/vector-icons';
 
-import customDrawer from './customDrawer';
 import Home from '../Pages/Home';
-import Hortalicas from '../Pages/Hortalicas';
+import Sobre from '../Pages/Sobre';
 import Frutas from '../Pages/Frutas';
+import Info from '../Components/Info';
+import custom from '../custom/colors';
 import Legumes from '../Pages/Legumes';
 import Cultivos from '../Pages/Cultivos';
-import Info from '../Components/Info';
-import Sobre from '../Pages/Sobre';
-import custom from '../custom/colors';
+import customDrawer from './customDrawer';
+import Hortalicas from '../Pages/Hortalicas';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();

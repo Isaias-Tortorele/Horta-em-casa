@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import {DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import {Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
+import {DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
 export default function customDrawer({...props}) {
  return (
