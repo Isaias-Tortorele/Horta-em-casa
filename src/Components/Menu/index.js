@@ -6,47 +6,47 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
 
-export default function menu() {
+export default function menu({ title }) {
   const navigation = useNavigation();
   return (
-    <SafeAreaView>
-      <LinearGradient 
-        colors={['#0C986B', '#0f7353' ]} 
+    <View >
+      <LinearGradient
+        style={styles.container}
         start={{ x: 0, y: 0 }}
-        end={{x: 0.5, y: 0 }}
-        style={styles.container}>
+        end={{ x: 0.5, y: 0 }}
+        colors={['#0C986B', '#0f7353']}
+      >
 
         <View style={styles.containerButton}>
           <TouchableOpacity style={styles.btn} onPress={() => navigation.openDrawer()} activeOpacity={.5}>
-            <Feather name='menu' size={30} color="#000" color="#FFF" />
+            <Feather name='menu' size={30} color="#FFF" />
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.text}>Inicio</Text>
+          <Text style={styles.text}>{title}</Text>
         </View>
-        
+
       </LinearGradient>
-    </SafeAreaView>
-    );
-  }
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
+    height: 65,
     width: '100%',
-    height: 70,
-    flexDirection: 'row',
+    elevation: 15,
     alignItems: 'center',
-    
+    flexDirection: 'row',
     backgroundColor: custom.green,
-    elevation: 15
   },
-  containerButton:{
+  containerButton: {
     paddingLeft: '5%',
     paddingRight: '10%'
   },
-  text:{
-    fontSize: 25,
-    fontFamily: fonts.subtitle,
+  text: {
+    fontSize: 20,
     color: custom.textWhite,
+    fontFamily: fonts.subtitle,
   }
 })

@@ -1,54 +1,39 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import {Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
-import {DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+import { View, Text, Image, Linking } from 'react-native';
 
-export default function customDrawer({...props}) {
- return (
-   <View>
-       <View style={{justifyContent: 'center', alignItems: 'center', marginVertical: '10%'}}>
-            <Image
-                source={require('../../assets/icon.png')}
-                resizeMode='contain'
-                style={{width: 100, height: 100}}
-            />
-            <Text style={{fontSize: 16, fontWeight: 'bold'}}>Bem-Vindo!</Text>
-       </View>
+import { Ionicons } from '@expo/vector-icons';
+import { DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
-        <DrawerItemList {...props}/>
+export default function customDrawer({ ...props }) {
+  return (
+    <>
+      <View style={{}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: '10%' }}>
+          <Image
+            source={require('../../assets/icon.png')}
+            style={{ width: 100, height: 100 }}
+            resizeMode='contain'
+          />
+          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Bem-Vindo!</Text>
+        </View>
 
-        <View style={{borderWidth: 0.5, marginHorizontal: 15}}></View>
-        
-        <DrawerItem 
-        label="Adubo (em breve)"
-        icon={({ size, color}) => (
+        <DrawerItemList {...props} />
+      </View>
+
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+      <View style={{borderBottomColor: '#bbb', borderTopWidth: 1}}/>
+        <DrawerItem
+          label="Avaliação Play Store"
+          icon={({ size, color }) => (
             <Ionicons
-              name={'logo-buffer'}
+              name={'logo-google-playstore'}
               color={color}
               size={size}
             />
           )}
+          onPress={() => Linking.openURL('https://play.google.com/store/apps/details?id=com.isaiasTortorele.Hortaemcasa')}
         />
-        <DrawerItem 
-        label="Vasos (em breve)"
-        icon={({ size, color}) => (
-            <MaterialCommunityIcons
-              name={'cup-outline'}
-              color={color}
-              size={size}
-            />
-          )}
-        />
-        <DrawerItem 
-        label="Vídeos (em breve)"
-        icon={({ size, color}) => (
-            <MaterialCommunityIcons
-              name={'youtube-subscription'}
-              color={color}
-              size={size}
-            />
-          )}
-        />
-   </View>
+      </View>
+    </>
   );
 }

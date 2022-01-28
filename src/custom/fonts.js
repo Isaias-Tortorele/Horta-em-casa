@@ -1,13 +1,13 @@
 export default {
     text: 'Roboto_500Medium',
-    subtitle: 'Roboto_700Bold',
     title: 'Roboto_900Black',
+    subtitle: 'Roboto_700Bold',
     textGeral: 'Roboto_400Regular',
 
-    sizeTitle: 30,
-    sizeSubtitle: 25,
     sizeBtn: 20,
-    sizeText18: 18,
     sizeText: 16,
+    sizeTitle: 30,
+    sizeText18: 18,
+    sizeSubtitle: 25,
     sizeTextGeral: 14,
 }

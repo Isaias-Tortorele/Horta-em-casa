@@ -10,75 +10,88 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView }
 export default function Header() {
     const navigation = useNavigation();
 
-return (
-    <ScrollView style={{height: '100%', backgroundColor:  custom.fundo}}>
-        <View style={styles.container}>
-            
-            <Text style={styles.title}>HORTA EM CASA</Text>
-            <View style={styles.containerButtons}>
-                <View>
-                    <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Hortaliças')} activeOpacity={.5}>
-                        <Image source={require('../../assets/images/Hortaliças.jpg')} style={styles.imageButtons} />
-                    </TouchableOpacity>
-                    <Text style={styles.nameButtons}>Hortaliças</Text>
+    return (
+        <ScrollView
+            style={{ height: '100%', backgroundColor: custom.fundo }}
+            showsVerticalScrollIndicator={false}
+        >
+            <View style={styles.container}>
+
+                <Text style={styles.title}>HORTA EM CASA</Text>
+                <View style={styles.containerButtons}>
+                    <View>
+                        <TouchableOpacity style={styles.buttons} onPress={() => navigation.navigate('Hortaliças')} activeOpacity={.5}>
+                            <Image source={require('../../assets/images/Hortaliças.jpg')} style={styles.imageButtons} />
+                        </TouchableOpacity>
+                        <Text style={styles.nameButtons}>Hortaliças</Text>
+                    </View>
+
+                    <View>
+                        <TouchableOpacity style={styles.buttons} onPress={() => navigation.navigate('Frutas')} activeOpacity={.5}>
+                            <Image source={require('../../assets/images/Frutas.jpg')} style={styles.imageButtons} />
+                        </TouchableOpacity>
+                        <Text style={styles.nameButtons}>Frutas</Text>
+                    </View>
+
+                    <View>
+                        <TouchableOpacity style={styles.buttons} onPress={() => navigation.navigate('Legumes')} activeOpacity={.5}>
+                            <Image source={require('../../assets/images/Legumes.jpg')} style={styles.imageButtons} />
+                        </TouchableOpacity>
+                        <Text style={styles.nameButtons}>Legumes</Text>
+                    </View>
+
                 </View>
 
-                <View>
-                    <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Frutas')} activeOpacity={.5}>
-                        <Image source={require('../../assets/images/Frutas.jpg')} style={styles.imageButtons} />
-                    </TouchableOpacity>
-                    <Text style={styles.nameButtons}>Frutas</Text>
-                </View>
 
-                <View>
-                    <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Legumes')} activeOpacity={.5}>
-                        <Image source={require('../../assets/images/Legumes.jpg')} style={styles.imageButtons} />
-                    </TouchableOpacity>
-                    <Text style={styles.nameButtons}>Legumes</Text>
-                </View>
-
-            </View>
-
-            
                 <Text style={styles.subtitle}>Vamos plantar?</Text>
                 <View style={styles.containerFlatlist}>
                     <View style={styles.viewFlatlist}>
                         <FlatList
                             showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={{paddingHorizontal: 20}}
+                            contentContainerStyle={{ paddingHorizontal: 20 }}
                             horizontal
                             data={plantas.sort((a, b) => a.name.localeCompare(b.id))}
                             keyExtractor={(item => String(item.id))}
-                            renderItem={ ({item}) => ( 
-                            <List data={item}/> 
+                            renderItem={({ item }) => (
+                                <List data={item} />
                             )}
-                            />
+                        />
                     </View>
                 </View>
-            
-            <View style={styles.containerAddButton}>
-                <TouchableOpacity 
-                    colors={['#0C986B', '#0f7353' ]} 
-                    start={{ x: 0, y: 0 }}
-                    end={{x: 0.5, y: 0 }}
-                    style={styles.addButton} 
-                    onPress={() => navigation.navigate( 'Cultivos')} activeOpacity={.5}
-                >
-                    <Text style={styles.textAddButton}>Meus cultivos</Text>
-                </TouchableOpacity>
+
+                <View style={styles.containerAddButton}>
+                    <TouchableOpacity
+                        colors={['#0C986B', '#0f7353']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 0.5, y: 0 }}
+                        style={styles.addButton}
+                        onPress={() => navigation.navigate('Cultivos')} activeOpacity={.5}
+                    >
+                        <Text style={styles.textAddButton}>Meus cultivos</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <Text style={styles.subtitle}>Adubos</Text>
+
+                <View style={styles.containerAdubos}>
+                    <View>
+                        <TouchableOpacity style={styles.buttonsAdubos} onPress={() => navigation.navigate('Adubos')} activeOpacity={.5}>
+                            <Image source={require('../../assets/images/adubo.jpg')} style={styles.imageButtonsAdu} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
             </View>
-        </View>
-    </ScrollView>
-);
+        </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         marginVertical: 30,
         alignItems: 'center',
     },
-    title:{
+    title: {
         fontSize: fonts.sizeTitle,
         fontFamily: fonts.subtitle,
     },
@@ -92,46 +105,68 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         elevation: custom.elevation,
         justifyContent: 'space-around',
-        borderRadius: custom.bordaLight, 
+        borderRadius: custom.bordaLight,
     },
-    buttons:{
+    containerAdubos: {
+        width: '60%',
+        height: 150,
+        padding: 10,
+        marginBottom: '30%',
+        alignItems: 'center',
+        flexDirection: 'row',
+        backgroundColor: '#FFF',
+        elevation: custom.elevation,
+        justifyContent: 'space-around',
+        borderRadius: custom.bordaLight,
+    },
+    buttons: {
         marginBottom: 5,
         borderRadius: 10,
         alignItems: 'center',
         backgroundColor: '#FFF',
         justifyContent: 'center',
     },
-    imageButtons:{
-        width: 70, 
-        height: 70, 
-        borderRadius: 10 
+    buttonsAdubos: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FFF',
     },
-    nameButtons:{
+    imageButtons: {
+        width: 70,
+        height: 70,
+        borderRadius: 10
+    },
+    imageButtonsAdu: {
+        width: 220,
+        height: 120,
+        borderRadius: 5
+    },
+    nameButtons: {
         textAlign: 'center',
         fontFamily: fonts.subtitle,
         fontSize: fonts.sizeTextGeral,
     },
-    subtitle:{
+    subtitle: {
         marginBottom: 5,
         fontFamily: fonts.text,
         fontSize: fonts.sizeSubtitle,
     },
-    containerFlatlist:{
+    containerFlatlist: {
         width: '90%',
         paddingVertical: 10,
         alignItems: 'center',
         backgroundColor: '#FFF',
         justifyContent: 'center',
         elevation: custom.elevation,
-        borderRadius: custom.bordaLight, 
+        borderRadius: custom.bordaLight,
     },
-    viewFlatlist:{
-        flex: 1, 
+    viewFlatlist: {
+        flex: 1,
         alignItems: 'center'
     },
-    containerAddButton:{
+    containerAddButton: {
         alignItems: 'center',
-        marginVertical: '10%',
+        marginVertical: '6%',
     },
     addButton: {
         width: 300,
@@ -139,7 +174,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         elevation: custom.elevation,
-        borderRadius: custom.bordaLight, 
+        borderRadius: custom.bordaLight,
         backgroundColor: custom.greenButton,
     },
     textAddButton: {

@@ -6,7 +6,7 @@ import Header from '../../Components/Header';
 function Home() {
  return (
    <View style={{backgroundColor: "#FFF"}}>
-      <Menu/>
+      <Menu title="Inicio"/>
       <Header />
    </View>
   );

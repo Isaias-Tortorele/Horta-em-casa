@@ -29,7 +29,7 @@
       "package": "com.isaiasTortorele.Hortaemcasa",
       "googleServicesFile": "./google-services.json",
       "versionCode": 1,
-      "permissions": ["VIBRATE", "com.google.android.c2dm.permission.RECEIVE", "USER_FACING_NOTIFICATIONS"]
+      "permissions": ["com.google.android.c2dm.permission.RECEIVE", "USER_FACING_NOTIFICATIONS"]
     }
   }
 }
