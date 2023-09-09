@@ -32,11 +32,6 @@ Nosso aplicativo Horta em casa ajuda você com diversas informações sobre hort
 -   [ ] React Navigation Stack
 -   [ ] React Navigation Drawer
 
-## ✨ Prototipagem inicial
-Feito no [Figma](https://www.figma.com/) ----- [ Acessar - Horta em casa ](https://www.figma.com/file/m1X7MN8RNu4CQBcdqq303l/App?node-id=0%3A1).
-
-
-
 ## 📥 Download
 
 
